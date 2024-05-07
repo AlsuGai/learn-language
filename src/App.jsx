@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import Header from './components/Header/Header'
-import './style/index.scss'
 import Footer from './components/Footer/Footer'
-import Content from './components/Main/Content'
+import './style/general.scss'
+import Cards from './components/Main/Cards'
+import WordsList from './components/Main/WordsList'
 
 function App() {
   return (
     <>
       <Header />
-      <Content />
+      <Cards />
+      <WordsList />
       <Footer />
     </>
   )

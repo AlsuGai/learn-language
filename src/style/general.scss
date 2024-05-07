@@ -3,8 +3,19 @@
     
 }
 
+@font-face {
+    font-family: "Bahnschrift";
+    src: 
+    url("./assets/fonts/Bahnschrift.ttf") format("ttf"),
+    url("./assets/fonts/Bahnschrift.woff") format("woff"),
+    url("./assets/fonts/Bahnschrift.woff2") format("woff2");
+}
+
 body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    font-family: "Bahnschrift";
 }
