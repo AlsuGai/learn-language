@@ -1,0 +1,40 @@
+.table {
+   gap: 2rem;
+}
+
+input {
+    padding: 0.5rem;
+    border: 0.5px solid rgb(92, 62, 121);
+    border-radius: 0.5rem;
+}
+
+td {
+    border: 0.5px solid black;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: rgba($color: white, $alpha: 0.4);
+}
+
+.button {
+    padding: 0.4rem 2rem;
+    font-family: "Bahnschrift";
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: rgb(204, 153, 255);
+    border: 0.5px solid rgb(92, 62, 121);
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+}
+
+svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    align-items: center;
+}
+
+.table-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

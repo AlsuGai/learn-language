@@ -1,19 +1,30 @@
 import { useState } from 'react'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import './style/general.scss'
-import Cards from './components/Main/Cards'
-import WordsList from './components/Main/WordsList'
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
+import { Table, Cards, Quiz, Themes, Error } from './Pages';
+import './style/App.scss'
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <Header />
-      <Cards />
-      <WordsList />
-      <Footer />
+      <header>
+       <Header />
+    </header>
+    <main className='main'>
+      <Routes>
+        <Route path='/' element={<Table />} />
+        <Route path='/cards' element={<Cards />}/>
+        <Route path='/quiz' element={<Quiz />} />
+        <Route path='/themes' element={<Themes />}/>
+        <Route path='*' element={<Error />} />
+      </Routes>
+    </main> 
+      <footer>
+        <Footer />
+      </footer>
     </>
-  )
+  );
 }
 
 export default App

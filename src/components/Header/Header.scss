@@ -2,9 +2,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 0.5px solid rgb(192, 192, 192);
+    background-color: rgba($color: rgb(198, 161, 234), $alpha: 0.8);
 
-    
-    &__logo{
+        &__logo{
         width: 10rem;
         height: auto;
     }
@@ -17,7 +19,7 @@
 
     &__buttons > a {
         text-decoration: none;
-        color: black;
+        color: white;
         text-transform: uppercase;
         font-size: 1.125rem;
         font-weight: 900;

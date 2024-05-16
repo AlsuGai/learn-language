@@ -1,13 +1,10 @@
-import Card from "./Card"
-
-
 export default function Cards() {
     return( 
-        <main>
+        <div>
             <h2>Карточки</h2>
             <div>
-                <Card />
+            
             </div>
-        </main>
+        </div>
     ) 
-}2
+}

@@ -1,14 +1,14 @@
-import './Header.scss'
+import './Header.scss';
+import { NavLink } from 'react-router-dom';
 
 export default function Header() {
     return (
         <nav className="header">
-            <img className="header__logo" src="src/assets/logo.png" alt="LearnEnglish" />
+            <NavLink to='/'><img className="header__logo" src="src/assets/images/logo.png" alt="LearnEnglish" /></NavLink>
             <div className="header__buttons">
-            <a href="#">Карточки</a>
-            <a href="#">Таблица слов</a>
-            <a href="#">Темы</a>
-            <a href="#">Тест</a>
+            <NavLink to="/cards">Карточки</NavLink>
+            <NavLink to="/themes">Темы</NavLink>
+            <NavLink to="quiz">Тест</NavLink>
             </div>
         </nav>
     )
