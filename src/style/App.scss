@@ -6,9 +6,9 @@
 @font-face {
     font-family: "Bahnschrift";
     src: 
-    url("./assets/fonts/Bahnschrift.ttf") format("ttf"),
-    url("./assets/fonts/Bahnschrift.woff") format("woff"),
-    url("./assets/fonts/Bahnschrift.woff2") format("woff2");
+    url("/src/assets/fonts/Bahnschrift.ttf") format("ttf"),
+    url("/src/assets/fonts/Bahnschrift.woff") format("woff"),
+    url("/src/assets/fonts/Bahnschrift.woff2") format("woff2");
 }
 
 body {
@@ -31,13 +31,11 @@ h2 {
 
 }
 
-
-
-.main {
+main {
     display: flex;
     justify-content: center;
     padding: 2rem 0;
-    background: url(src/assets/images/background.png);
+    background: url(/src/assets/images/background.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
