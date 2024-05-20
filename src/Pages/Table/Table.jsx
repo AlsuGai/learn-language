@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import CreateWordTable from "../../Components/CreateWordTable/CreateWordTable.jsx"
+import CreateWordTable from "../../Component/CreateWordTable/CreateWordTable.jsx"
 import './Table.scss'
 
 export default function Table() {

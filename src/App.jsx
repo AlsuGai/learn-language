@@ -1,16 +1,15 @@
 import { useState } from 'react'
-import Header from './Components/Header/Header';
-import Footer from './Components/Footer/Footer';
+import Header from './Component/Header/Header';
+import Footer from './Component/Footer/Footer';
 import { Table, Cards, Quiz, Themes, Error } from './Pages';
 import './style/App.scss'
 import { Route, Routes } from 'react-router-dom';
-
 
 function App() {
   return (
     <>
       <header>
-       <Header />
+      <Header />
     </header>
     <main className='main'>
       <Routes>
