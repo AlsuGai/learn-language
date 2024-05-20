@@ -9,7 +9,7 @@ export default function Table() {
     const [words, setWords] = useState([]);
 
     useEffect(() => {
-        fetch('http://itgirlschool.justmakeit.ru/api/words')
+        fetch('https://itgirlschool.justmakeit.ru/api/words')
         .then(res => res.json())
         .then((data) => {
             setIsLoaded(true);
