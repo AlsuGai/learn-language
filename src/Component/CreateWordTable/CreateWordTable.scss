@@ -1,0 +1,24 @@
+.table-icons {
+    display: flex;
+    justify-content: space-around;
+
+    button {
+        background-color: rgb(170, 134, 222);
+        border: 1px solid rgb(170, 134, 222);
+        border-radius: 50%;
+    }
+
+
+    img {
+        padding: 0.1rem;
+        height: 2rem;
+        width: auto;
+        align-items: center;
+    }
+    
+
+    button:hover {
+        background-color: rgb(192, 192, 192);
+        border: 1px solid rgb(192, 192, 192);
+    }
+}

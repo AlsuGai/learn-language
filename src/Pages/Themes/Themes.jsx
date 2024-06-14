@@ -1,7 +1,7 @@
 export default function Themes() {
     return (
         <div>
-            Ошибка
+        Темы
         </div>
     )
 }

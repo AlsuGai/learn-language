@@ -3,9 +3,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    height: 10%;
     padding: 1.5rem 2rem;
     border-bottom: 0.5px solid rgb(192, 192, 192);
-    background-color: rgba($color: rgb(198, 161, 234), $alpha: 0.8);
+    background-color: rgba($color: rgb(150, 60, 240), $alpha: 0.8);
 
         &__logo{
         width: 20rem;
@@ -30,5 +31,10 @@
         color: rgb(45, 4, 161);
         text-decoration: underline solid rgb(233, 18, 129);
         text-decoration-thickness: 0.15rem;
+    }
+
+    .copy {
+        color: rgba($color: white, $alpha: 0.8);
+        padding-top: 1rem;
     }
 }

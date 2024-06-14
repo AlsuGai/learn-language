@@ -20,21 +20,15 @@ td {
     font-family: "Bahnschrift";
     text-transform: uppercase;
     font-weight: 700;
-    background-color: rgb(204, 153, 255);
     border: 0.5px solid rgb(92, 62, 121);
     border-radius: 0.5rem;
     color: white;
+    background-image: linear-gradient(to left, rgb(61, 6,158), rgb(224, 18,131));
     font-size: 1rem;
 }
 
 svg {
     width: 1.5rem;
     height: 1.5rem;
-    align-items: center;
-}
-
-.table-icons {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
 }
