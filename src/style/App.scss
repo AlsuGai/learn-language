@@ -4,11 +4,12 @@
 }
 
 @font-face {
-    font-family: "Bahnschrift";
+    font-family: "DIN PRO";
     src: 
-    url("/src/assets/fonts/Bahnschrift.ttf") format("ttf"),
-    url("/src/assets/fonts/Bahnschrift.woff") format("woff"),
-    url("/src/assets/fonts/Bahnschrift.woff2") format("woff2");
+    url("/src/assets//fonts/dinpro_condensedregular.otf") format("otf"),
+    url("/src/assets/fonts/DINPro-CondensedRegular.eot") format("eot"),
+    url("/src/assets/fonts/DINPro-CondensedRegular.ttf") format("ttf"),
+    url("/src/assets/fonts/DINPro-CondensedRegular.woff") format("woff");
 }
 
 body {

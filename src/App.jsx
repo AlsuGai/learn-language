@@ -13,8 +13,8 @@ function App() {
     </header>
     <main className='main'>
       <Routes>
-        <Route path='/learn-language' element={<Table />} />
-        <Route path='/cards' element={<Cards />}/>
+        <Route path='/learn-language/' element={<Table />} />
+        <Route path='/learn-language/cards' element={<Cards />}/>
         <Route path='/quiz' element={<Quiz />} />
         <Route path='/themes' element={<Themes />}/>
         <Route path='*' element={<Error />} />
