@@ -1,21 +1,26 @@
 import { useState, useEffect } from 'react';
 import styles from './CreateWordCard.module.scss'
 
-export default function() {
-    const [translate, setTranslate] = useState("Проверить");
+export default function({id, english, transcription, russian}) {
+    const [translate, setTranslate] = useState(false);
 
-    const checkTranslate = (e) => {
-        setTranslate("корзина");
-        e.target.classList.remove('cardbutton');
+    useEffect(() => setTranslate(false), [id])
+
+    const checkTranslate = () => {
+        setTranslate(!translate);
     }
     
     return (
         <div className={styles.cardform}>
             <div>
-            <div className={styles.cardform__english}>basket</div>
-            <div className={styles.cardform__transcriprion}>[ˈbɑːskɪt]</div>
+            <div className={styles.cardform__english}>{english}</div>
+            <div className={styles.cardform__transcriprion}>{transcription}</div>
             </div>
-            <div onClick={checkTranslate} className={styles.cardform__translate + ' ' + styles.cardbutton}>{translate}</div>
+            {translate ? (
+                <div className={styles.cardform__translate}>{russian}</div>
+            ) : (
+                <div onClick={checkTranslate} className={styles.cardform__translate + ' ' + styles.cardbutton}>Проверить</div>
+            )}
             </div>
     )
 }

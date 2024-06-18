@@ -4,15 +4,33 @@ import CreateWordCard from '../../Component/CreateWordCard/CreateWordCard';
 import img_arroleft from "../../assets/images/arrowleft.png";
 import img_arroright from "../../assets/images/arrowright.png";
 
-export default function Cards() {
+export default function Cards({words, setWords}) {
+    const [count, setCount] = useState(0);
+    console.log(words)
+
+    function nextSlider() {
+        if (count === words.length - 1) {
+            setCount(0);
+            return;
+        }
+        setCount(count + 1);
+    }
+
+    function prevSlider() {
+        if (count === 0) {
+            setCount(words.length - 1);
+            return;
+        }
+        setCount(count - 1);
+    }
 
     return( 
         <div>
             <h2>Карточки</h2>
             <div className={styles.cards}>
-            <button><img src={img_arroleft} alt="Назад" /></button>
-            <CreateWordCard />
-            <button><img src={img_arroright} alt="Следующее"/></button>
+            <button onClick={prevSlider}><img src={img_arroleft} alt="Назад" /></button>
+            <CreateWordCard {...words[count]} />
+            <button onClick={nextSlider}><img src={img_arroright} alt="Следующее"/></button>
             </div>
         </div>
     ) 
