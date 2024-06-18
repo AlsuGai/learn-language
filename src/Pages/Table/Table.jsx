@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import CreateWordTable from "../../Component/CreateWordTable/CreateWordTable.jsx"
-import './Table.scss'
+import styles from './Table.module.scss'
 
 export default function Table() {
     
@@ -29,13 +29,15 @@ export default function Table() {
         return(
             <div>
                 <h2>Таблица слов</h2>
-                <table className="table">
+                <table className={styles.table}>
                     <thead>
                         <tr>
                     <th><input type="text" placeholder="English"></input></th>
                     <th><input type="text" placeholder="Transcription"></input></th>
-                    <th><input type="text" placeholder="Russian"></input></th>
-                    <th><button className="button">добавить слово</button></th>
+                    <th><input type="text" placeholder="Russian"></input>
+                    </th>
+                    <th><input type="text" placeholder="Тема"></input></th>
+                    <th><button className={styles.button}>добавить слово</button></th>
                     </tr>
                     </thead>
                     <tbody >

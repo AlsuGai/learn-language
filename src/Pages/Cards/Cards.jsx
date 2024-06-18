@@ -1,5 +1,7 @@
-import './Cards.scss'
+import styles from './Cards.module.scss'
 import { useState, useEffect } from 'react'
+import img_arroleft from "../../assets/images/arrowleft.png";
+import img_arroright from "../../assets/images/arrowright.png";
 
 export default function Cards() {
 
@@ -7,22 +9,22 @@ export default function Cards() {
 
     const checkTranslate = (e) => {
         setTranslate("корзина");
-        e.target.classList.remove("card-button");
+        e.target.classList.remove('cardbutton');
     }
 
     return( 
         <div>
             <h2>Карточки</h2>
-            <div className="cards">
-            <button><img src="src/assets/images/arrowleft.png" alt="LearnEnglish" /></button>
-            <div className="card-form">
+            <div className={styles.cards}>
+            <button><img src={img_arroleft} alt="Назад" /></button>
+            <div className={styles.cardform}>
                 <div>
-            <div className="card-form__english">basket</div>
-            <div className="card-form__transcriprion">[ˈbɑːskɪt]</div>
+            <div className={styles.cardform__english}>basket</div>
+            <div className={styles.cardform__transcriprion}>[ˈbɑːskɪt]</div>
             </div>
-            <div onClick={checkTranslate} className="card-form__translate card-button">{translate}</div>
+            <div onClick={checkTranslate} className={styles.cardform__translate + ' ' + styles.cardbutton}>{translate}</div>
             </div>
-            <button><img src="src/assets/images/arrowright.png" alt="Следующее"/></button>
+        <button><img src={img_arroright} alt="Следующее"/></button>
             </div>
         </div>
     ) 

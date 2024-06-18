@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Header from './Component/Header/Header';
 import Footer from './Component/Footer/Footer';
-import { Table, Cards, Quiz, Themes, Error } from './Pages';
+import { Table, Cards, Themes, Error } from './Pages';
 import './style/App.scss'
 import { Route, Routes } from 'react-router-dom';
 
@@ -15,8 +15,7 @@ function App() {
       <Routes>
         <Route path='/learn-language/' element={<Table />} />
         <Route path='/learn-language/cards' element={<Cards />}/>
-        <Route path='/quiz' element={<Quiz />} />
-        <Route path='/themes' element={<Themes />}/>
+        <Route path='/learn-language/themes' element={<Themes />}/>
         <Route path='*' element={<Error />} />
       </Routes>
     </main> 

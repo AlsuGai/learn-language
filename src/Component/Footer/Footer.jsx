@@ -1,16 +1,16 @@
-import './Footer.scss';
 import { NavLink } from 'react-router-dom';
+import styles from './Footer.module.scss';
+import img_logo from "../../assets/images/logo.png";
 
 export default function Footer() {
     return (
-        <nav className="footer">
-            <NavLink to='/learn-language'><img className="footer__logo" src="./src/assets/images/logo.png" alt="LearnEnglish" /></NavLink>
-            <div className='footer__buttons'>
+        <nav className={styles.footer}>
+            <NavLink to='/learn-language'><img className={styles.footer__logo} src={img_logo} alt="LearnEnglish" /></NavLink>
+            <div className={styles.footer__buttons}>
             <NavLink to="/cards">Карточки</NavLink>
             <NavLink to="/themes">Темы</NavLink>
-            <NavLink to="quiz">Тест</NavLink>
             </div>
-            <div className='copy'>&copy; Сайт разработан Гайнутдиновой Алсу в рамках учебного проекта ITGIRLS</div>
+            <div className={styles.copy}>&copy; Сайт разработан Гайнутдиновой Алсу в рамках учебного проекта ITGIRLS</div>
         </nav>
         
     )
