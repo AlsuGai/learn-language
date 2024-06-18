@@ -7,6 +7,11 @@ export default function Table() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [words, setWords] = useState([]);
+    const [editing, setEditing] = useState(false);
+    const handleEdit = () => {
+    setEditing(!editing);
+    };
+
 
     useEffect(() => {
         fetch('https://itgirlschool.justmakeit.ru/api/words')
@@ -31,13 +36,24 @@ export default function Table() {
                 <h2>Таблица слов</h2>
                 <table className={styles.table}>
                     <thead>
-                        <tr>
-                    <th><input type="text" placeholder="English"></input></th>
-                    <th><input type="text" placeholder="Transcription"></input></th>
-                    <th><input type="text" placeholder="Russian"></input>
-                    </th>
-                    <th><input type="text" placeholder="Тема"></input></th>
-                    <th><button className={styles.button}>добавить слово</button></th>
+                    <tr>
+                    {editing ? (<th><input className={styles.input} type="text" placeholder="English"></input></th>) 
+                    : 
+                    (<th className={styles.th}>English</th>)} 
+                    {editing ? (<th><input className={styles.input} type="text" placeholder="Transcription"></input></th>
+                    ) : (
+                       <th className={styles.th}>Транскрипция</th> 
+                    )}
+                    {editing ? 
+                    (<th><input className={styles.input} type="text" placeholder="Russian"></input></th>) :
+                    (<th className={styles.th}>Перевод</th>)
+                    }
+                    {editing ? (<th><input className={styles.input} type="text" placeholder="Тема"></input></th>) :
+                    (<th className={styles.th}>Тема</th>)
+                    }
+                    {editing ? (
+                    <button onClick={handleEdit} className={styles.button}>сохранить</button>) : 
+                    (<button onClick={handleEdit} className={styles.button}>добавить слово</button>)}
                     </tr>
                     </thead>
                     <tbody >

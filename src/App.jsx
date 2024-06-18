@@ -10,7 +10,7 @@ function App() {
     <>
       <header>
       <Header />
-    </header>
+      </header>
     <main className='main'>
       <Routes>
         <Route path='/learn-language/' element={<Table />} />
