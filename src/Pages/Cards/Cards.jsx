@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react';
 import CreateWordCard from '../../Component/CreateWordCard/CreateWordCard';
 import img_arroleft from "../../assets/images/arrowleft.png";
 import img_arroright from "../../assets/images/arrowright.png";
+import { useActionData } from 'react-router-dom';
 
 export default function Cards({words, setWords}) {
     const [count, setCount] = useState(0);
-    console.log(words)
+    const [learnCount, setLearnCount] = useState(0);
 
     function nextSlider() {
         if (count === words.length - 1) {
@@ -24,14 +25,19 @@ export default function Cards({words, setWords}) {
         setCount(count - 1);
     }
 
+   const editCounter = () => {
+        setLearnCount(learnCount + 1)
+    }
+
     return( 
         <div>
             <h2>Карточки</h2>
             <div className={styles.cards}>
             <button onClick={prevSlider}><img src={img_arroleft} alt="Назад" /></button>
-            <CreateWordCard {...words[count]} />
+            <CreateWordCard {...words[count]} editCounter={editCounter} />
             <button onClick={nextSlider}><img src={img_arroright} alt="Следующее"/></button>
             </div>
+            <div className={styles.counter}>{learnCount}</div>
         </div>
     ) 
 }
