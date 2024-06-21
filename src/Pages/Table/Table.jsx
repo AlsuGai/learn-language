@@ -2,40 +2,23 @@ import { useEffect, useState } from "react"
 import CreateWordTable from "../../Component/CreateWordTable/CreateWordTable.jsx"
 import styles from './Table.module.scss'
 
-export default function Table() {
+export default function Table({words, setWords}) {
     
-
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
-    const [words, setWords] = useState([]);
+    const [wordsclass, setWordsclass] = useState([]);
     const [editing, setEditing] = useState(false);
     const handleEdit = (e) => {
         e.preventDefault();
-    setEditing(!editing);
-    };
+        setEditing(!editing);
+        };
 
-   
-
-
-    useEffect(() => {
-        fetch('https://itgirlschool.justmakeit.ru/api/words')
-        .then(res => res.json())
-        .then((data) => {
-            setIsLoaded(true);
-            setWords(data);
-        },
-        (error) => {
-            setIsLoaded(true);
-            setError(error);
-        })
-    }, [])
-
-    if(error) {
-        return <div>Error: {error.message}</div>;
-    } else if(!isLoaded) {
-        return <div>Loading...</div>;
-    } else {
-        return(
+    if(!words) {
+        return (
+            <h2>Ошибка</h2>
+        )
+    }
+           return(
             <div>
                 <h2>Таблица слов</h2>
                 <form className={styles.table}>
@@ -65,5 +48,4 @@ export default function Table() {
             </form>
         </div>
     );
-    }
 }

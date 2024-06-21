@@ -15,7 +15,7 @@ function App() {
       </header>
     <main className='main'>
       <Routes>
-        <Route path='/learn-language/' element={<Table />} />
+        <Route path='/learn-language/' element={<Table words = {words}/>} />
         <Route path='/learn-language/cards' element={<Cards setWords = {setWords} words = {words} />}/>
         <Route path='/learn-language/themes' element={<Themes />}/>
         <Route path='/learn-language/*' element={<Error />} />

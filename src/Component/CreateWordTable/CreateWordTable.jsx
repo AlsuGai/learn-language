@@ -28,14 +28,16 @@ setEditing(false);
 };
 
 const handleCancel = (e) => {
-e.preventDefault()
+e.preventDefault();
 setEditWord({
 editEnglish: english,
 editTranscription: transcription,
 editRussian: russian,
 tags: tags,
-});
+}
+);
 setEditing(false);
+
 };
 
 const speechText = (e) => {
@@ -118,11 +120,12 @@ editWord.tags
 <button>
 <img src={img_delete} alt="Удалить" />
 </button>
-</>
-)}
 <button onClick={speechText}>
 <img src={img_sound} alt="Воспроизнести" />
 </button>
+</>
+)}
+
 </div>
 </div>
 );

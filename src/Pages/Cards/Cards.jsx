@@ -28,6 +28,12 @@ export default function Cards({words, setWords}) {
         setLearnCount(learnCount + 1)
     }
 
+    if(!words) {
+        return (
+            <h2>Ошибка</h2>
+        )
+    }
+
     return( 
         <div>
             <h2>Карточки</h2>
