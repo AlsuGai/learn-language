@@ -18,7 +18,7 @@ function App() {
         <Route path='/learn-language/' element={<Table />} />
         <Route path='/learn-language/cards' element={<Cards setWords = {setWords} words = {words} />}/>
         <Route path='/learn-language/themes' element={<Themes />}/>
-        <Route path='*' element={<Error />} />
+        <Route path='/learn-language/*' element={<Error />} />
       </Routes>
     </main> 
       <footer>

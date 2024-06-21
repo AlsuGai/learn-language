@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import CreateWordCard from '../../Component/CreateWordCard/CreateWordCard';
 import img_arroleft from "../../assets/images/arrowleft.png";
 import img_arroright from "../../assets/images/arrowright.png";
-import { useActionData } from 'react-router-dom';
 
 export default function Cards({words, setWords}) {
     const [count, setCount] = useState(0);
