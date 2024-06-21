@@ -4,12 +4,18 @@
     justify-content: center;
     text-align: center;
     border: 1px solid rgb(150, 60, 240);
-    padding: 4rem;
+    padding: 0 4rem 4rem;
     background-color: rgba($color: white, $alpha: 0.7);
     border-radius: 1.5rem;
     box-shadow: 2px 2px 4px rgba(61, 105, 16, 0.5);
     width: 17rem;
     animation: rotateCard 1s linear;
+
+    &__rigth {
+        display: flex;
+        justify-content: right;
+        padding-top: 1rem;
+    }
 
     @keyframes rotateCard {
         0% {
@@ -24,6 +30,7 @@
         font-size: 2rem;
         font-weight: 500;
         animation: rotateCard 1s linear;
+        padding-top: 2rem;
     }
 
     &__transcriprion {
@@ -37,6 +44,13 @@
         font-size: 1.5rem;
         font-weight: 400;
     }
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: rotateCard 1s linear;
+    }
 }
 
 .cardbutton {
@@ -49,6 +63,7 @@
     font-weight: 400;
     transition:0.5s;
     animation: rotateCard 1s linear;
+    padding-right: 2rem;
 }
 
 .cardbutton:hover {

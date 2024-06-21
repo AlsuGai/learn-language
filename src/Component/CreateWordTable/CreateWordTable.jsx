@@ -38,6 +38,13 @@ tags: tags,
 setEditing(false);
 };
 
+const speechText = (e) => {
+    e.preventDefault()
+    const speechUtterance = new SpeechSynthesisUtterance();
+    speechUtterance.text = english;
+    speechSynthesis.speak(speechUtterance);
+}
+
 return (
 <div className={styles.word} key={id}>
 <div className={styles.word__div}>
@@ -113,7 +120,7 @@ editWord.tags
 </button>
 </>
 )}
-<button>
+<button onClick={speechText}>
 <img src={img_sound} alt="Воспроизнести" />
 </button>
 </div>

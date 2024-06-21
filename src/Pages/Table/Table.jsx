@@ -14,6 +14,8 @@ export default function Table() {
     setEditing(!editing);
     };
 
+   
+
 
     useEffect(() => {
         fetch('https://itgirlschool.justmakeit.ru/api/words')
