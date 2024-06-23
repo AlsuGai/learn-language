@@ -18,7 +18,7 @@ export default function Table({words, setWords}) {
             <h2>Ошибка</h2>
         )
     }
-           return(
+           return (
             <div>
                 <h2>Таблица слов</h2>
                 <form className={styles.table}>
@@ -47,5 +47,5 @@ export default function Table({words, setWords}) {
                 }
             </form>
         </div>
-    );
+    )
 }

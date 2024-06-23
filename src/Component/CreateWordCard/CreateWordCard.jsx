@@ -1,5 +1,5 @@
 import img_sound from "../../assets/images/sound.png";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, forwardRef } from 'react';
 import styles from './CreateWordCard.module.scss'
 
 export default function({ id, english, transcription, russian, editCounter }) {
@@ -11,7 +11,7 @@ export default function({ id, english, transcription, russian, editCounter }) {
         setTranslate(!translate);
         editCounter();
     }
-
+    
     const speechText = () => {
         const speechUtterance = new SpeechSynthesisUtterance();
         speechUtterance.text = english;
@@ -33,7 +33,9 @@ export default function({ id, english, transcription, russian, editCounter }) {
             {translate ? (
                 <div className={styles.cardform__translate}>{russian}</div>
             ) : (
-                <div onClick={checkTranslate} className={styles.cardform__translate + ' ' + styles.cardbutton}>Проверить</div>
+                <div onClick={checkTranslate} 
+                className={styles.cardform__translate + ' ' + styles.cardbutton} 
+                >Проверить</div>
             )}
             </div>
     )

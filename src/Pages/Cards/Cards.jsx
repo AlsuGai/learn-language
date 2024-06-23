@@ -1,5 +1,5 @@
 import styles from './Cards.module.scss';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, forwardRef } from 'react';
 import CreateWordCard from '../../Component/CreateWordCard/CreateWordCard';
 import img_arroleft from "../../assets/images/arrowleft.png";
 import img_arroright from "../../assets/images/arrowright.png";
@@ -7,6 +7,9 @@ import img_arroright from "../../assets/images/arrowright.png";
 export default function Cards({words, setWords}) {
     const [count, setCount] = useState(0);
     const [learnCount, setLearnCount] = useState(0);
+    const ref = useRef();  
+
+    //useEffect(() => ref.current.focus(), [])
 
     function nextSlider() {
         if (count === words.length - 1) {
@@ -43,6 +46,6 @@ export default function Cards({words, setWords}) {
             <button onClick={nextSlider}><img src={img_arroright} alt="Следующее"/></button>
             </div>
             <div className={styles.counter}>{learnCount}</div>
-        </div>
+        </div>  
     ) 
 }
