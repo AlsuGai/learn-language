@@ -25,7 +25,6 @@ const reEng = /[A-Za-z]/;
 const reRus = /[а-яА-ЯЁё]/;
 const reTag = /[a-zа-яё\s]/;
 
-
 const handleEdit = (e) => {
 e.preventDefault()
 setEditing(true);

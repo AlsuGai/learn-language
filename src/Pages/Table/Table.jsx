@@ -2,13 +2,35 @@ import { useEffect, useState } from "react"
 import CreateWordTable from "../../Component/CreateWordTable/CreateWordTable.jsx"
 import styles from './Table.module.scss'
 
-export default function Table({words, setWords}) {
+export default function Table({words}) {
 
     const [editing, setEditing] = useState(false);
-    const handleEdit = (e) => {
+    const [editWord, setEditWord] = useState([]);
+    const [engWordError, setEngWordError] = useState("");
+    const [rusWordError, setRusWordError] = useState("");
+    const [transcriptionError, setTranscriptionError] = useState("");
+    const [tagError, setTagError] = useState("");
+    const [formValid, setFormValid] = useState(false);
+    const reEng = /[A-Za-z]/;
+    const reRus = /[а-яА-ЯЁё]/;
+    const reTag = /[a-zа-яё\s]/;
+
+   const handleEdit = (e) => {
         e.preventDefault();
-        setEditing(!editing);
+        setEditing(true);
         };
+
+    const handleAdd= (e) => {
+        e.preventDefault()
+        setEditing(false);
+    };
+            
+
+    const handleCancel = (e) => {
+            e.preventDefault();
+            setEditWord();
+            setEditing(false);
+            };
 
     if(!words) {
         return (
@@ -35,7 +57,10 @@ export default function Table({words, setWords}) {
                     (<div className={styles.name}>Тема</div>)
                     }
                     {editing ? (
-                    <button onClick={handleEdit} className={styles.button}>сохранить</button>) : 
+                    <>
+                    <button onClick={handleEdit} className={styles.button}>сохранить</button>
+                    <button onClick={handleCancel} className={styles.button}>отмена</button>
+                    </>) : 
                     (<button onClick={handleEdit} className={styles.button}>добавить слово</button>)}
                     </div>
                     {words.map((word, id) => (
