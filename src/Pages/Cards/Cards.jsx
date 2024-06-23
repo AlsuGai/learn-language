@@ -4,10 +4,10 @@ import CreateWordCard from '../../Component/CreateWordCard/CreateWordCard';
 import img_arroleft from "../../assets/images/arrowleft.png";
 import img_arroright from "../../assets/images/arrowright.png";
 
-export default function Cards({words, setWords}) {
+export default function Cards({words}) {
     const [count, setCount] = useState(0);
     const [learnCount, setLearnCount] = useState(0);
-    const ref = useRef();  
+    //const ref = useRef();  
 
     //useEffect(() => ref.current.focus(), [])
 

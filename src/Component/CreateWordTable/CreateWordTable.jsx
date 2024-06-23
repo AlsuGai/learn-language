@@ -5,6 +5,7 @@ import img_delete from "../../assets/images/delete.png";
 import img_sound from "../../assets/images/sound.png";
 import img_cancel from "../../assets/images/cancel.png";
 import styles from "./CreateWordTable.module.scss";
+import { ssrImportKey } from "vite/runtime";
 
 export default function CreateWordTable({ word }) {
 const { id, english, transcription, russian, tags } = word;
@@ -23,7 +24,6 @@ const [formValid, setFormValid] = useState(false);
 const reEng = /[A-Za-z]/;
 const reRus = /[а-яА-ЯЁё]/;
 const reTag = /[a-zа-яё\s]/;
-
 
 
 const handleEdit = (e) => {

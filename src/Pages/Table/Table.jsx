@@ -3,10 +3,7 @@ import CreateWordTable from "../../Component/CreateWordTable/CreateWordTable.jsx
 import styles from './Table.module.scss'
 
 export default function Table({words, setWords}) {
-    
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [wordsclass, setWordsclass] = useState([]);
+
     const [editing, setEditing] = useState(false);
     const handleEdit = (e) => {
         e.preventDefault();
