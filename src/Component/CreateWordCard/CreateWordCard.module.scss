@@ -61,13 +61,13 @@
     color: black;
     font-size: 1.3rem;
     font-weight: 400;
-    transition:0.5s;
+    transition: 0.5s;
     animation: rotateCard 1s linear;
     padding-right: 2rem;
-}
-
-.cardbutton:hover {
+    
+    &:hover {
     background-color: rgb(192, 192, 192);
     opacity: 0.8;
-}
+    }
+    }
 

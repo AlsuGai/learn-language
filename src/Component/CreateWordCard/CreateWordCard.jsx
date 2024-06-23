@@ -34,7 +34,7 @@ export default function({ id, english, transcription, russian, editCounter }) {
                 <div className={styles.cardform__translate}>{russian}</div>
             ) : (
                 <div onClick={checkTranslate} 
-                className={styles.cardform__translate + ' ' + styles.cardbutton} 
+                className={`${styles.cardform__translate} ${styles.cardbutton}`} 
                 >Проверить</div>
             )}
             </div>

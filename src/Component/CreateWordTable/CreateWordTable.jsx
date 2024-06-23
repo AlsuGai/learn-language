@@ -69,7 +69,7 @@ return (
 <div className={styles.word} key={id}>
 <div className={styles.word__div}>
 {editing ? (
-<input
+<input 
 className={styles.input}
 type="text"
 value={editWord.editEnglish}
