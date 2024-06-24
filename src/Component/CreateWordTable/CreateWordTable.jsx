@@ -5,7 +5,6 @@ import img_delete from "../../assets/images/delete.png";
 import img_sound from "../../assets/images/sound.png";
 import img_cancel from "../../assets/images/cancel.png";
 import styles from "./CreateWordTable.module.scss";
-import { ssrImportKey } from "vite/runtime";
 
 export default function CreateWordTable({ word }) {
 const { id, english, transcription, russian, tags } = word;
@@ -16,10 +15,14 @@ editTranscription: transcription,
 editRussian: russian,
 tags: tags,
 });
-const [engWordError, setEngWordError] = useState("");
-const [rusWordError, setRusWordError] = useState("");
-const [transcriptionError, setTranscriptionError] = useState("");
-const [tagError, setTagError] = useState("");
+const [styleEng, setStyleEng] = useState(styles.input);
+const [styleTranscription, setStyleTranscription] = useState(styles.input);
+const [styleRus, setStyleRus] = useState(styles.input);
+const [styleTAg, setStyleTag] = useState(styles.input);
+const [engWordError, setEngWordError] = useState(false);
+const [rusWordError, setRusWordError] = useState(false);
+const [transcriptionError, setTranscriptionError] = useState(false);
+const [tagError, setTagError] = useState(false);
 const [formValid, setFormValid] = useState(false);
 const reEng = /[A-Za-z]/;
 const reRus = /[а-яА-ЯЁё]/;
@@ -28,6 +31,10 @@ const reTag = /[a-zа-яё\s]/;
 const handleEdit = (e) => {
 e.preventDefault()
 setEditing(true);
+setStyleEng(styles.input);
+setStyleTranscription(styles.input);
+setStyleRus(styles.input);
+setStyleTag(styles.input);
 };
 
 const handleSave = (e) => {
@@ -38,6 +45,7 @@ setEditing(false);
 
 const handleCancel = (e) => {
 e.preventDefault();
+setFormValid(true);
 setEditWord({
 editEnglish: english,
 editTranscription: transcription,
@@ -46,7 +54,6 @@ tags: tags,
 }
 );
 setEditing(false);
-
 };
 
 const speechText = (e) => {
@@ -69,14 +76,16 @@ return (
 <div className={styles.word__div}>
 {editing ? (
 <input 
-className={styles.input}
+className={styleEng}
 type="text"
 value={editWord.editEnglish}
 onChange={(e) => {
     setEditWord({ ...editWord, editEnglish: e.target.value});
     if(!reEng.test(String(e.target.value).toLowerCase())) {
-    setEngWordError("Некорректное слово")
+    setStyleEng(styles.inputRed)
+    setEngWordError(true)
 } else {
+    setStyleEng(styles.input);
     setEngWordError();
 }
 }
@@ -86,18 +95,19 @@ onChange={(e) => {
 editWord.editEnglish
 )}
 </div>
-{engWordError && <div style={{color: "red"}}>{engWordError}</div>}
 <div className={styles.word__div}>
 {editing ? (
-<input className={styles.input}
+<input className={styleTranscription}
 type="text"
 value={editWord.editTranscription}
 onChange={(e) => {
     setEditWord({ ...editWord, editTranscription: e.target.value })
     if (String(e.target.value.length) <= 0) {
-        setTranscriptionError("Заполните транскрипцию")
+        setStyleTranscription(styles.inputRed);
+        setTranscriptionError(true)
     }
     else {
+        setStyleTranscription(styles.input)
         setTranscriptionError()
     }
 }
@@ -107,40 +117,41 @@ onChange={(e) => {
 editWord.editTranscription
 )}
 </div>
-{transcriptionError && <div style={{color: "red"}}>{transcriptionError}</div>}
 <div className={styles.word__div}>
 {editing ? (
 <input
-className={styles.input}
+className={styleRus}
 type="text"
 value={editWord.editRussian}
 onChange={(e) => {
     setEditWord({ ...editWord, editRussian: e.target.value });
     if(!reRus.test(String(e.target.value).toLowerCase())) {
-        setRusWordError("Некорректное слово")
+        setStyleRus(styles.inputRed)
+        setRusWordError(true)
     }else {
+        setStyleRus(styles.input)
         setRusWordError()
     }
 }
-
 }
 />
 ) : (
 editWord.editRussian
 )}
 </div>
-{rusWordError && <div style={{color: "red"}}>{rusWordError}</div>}
 <div className={styles.word__div}>
 {editing ? (
 <input
-className={styles.input}
+className={styleTAg}
 type="text"
 value={editWord.tags}
 onChange={(e) => {
     setEditWord({ ...editWord, tags: e.target.value });
     if (!reTag.test(String(e.target.value).toLowerCase())) {
-        setTagError("Укажите тему")
+        setStyleTag(styles.inputRed)
+        setTagError(true)
     } else {
+        setStyleTag(styles.input)
         setTagError();
     }
 }
@@ -150,7 +161,6 @@ onChange={(e) => {
 editWord.tags
 )}
 </div>
-{tagError && <div style={{color: "red"}}>{tagError}</div>}
 <div className={styles.tableicons}>
 {editing ? (
 <>
@@ -174,8 +184,8 @@ editWord.tags
 </button>
 </>
 )}
-
 </div>
+{!formValid && <div style={{color: "red"}}>Пожалуйста, заполните корректно форму</div>}
 </div>
 );
 }

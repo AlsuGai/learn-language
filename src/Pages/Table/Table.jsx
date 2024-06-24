@@ -4,33 +4,44 @@ import styles from './Table.module.scss'
 
 export default function Table({words}) {
 
-    const [editing, setEditing] = useState(false);
-    const [editWord, setEditWord] = useState([]);
-    const [engWordError, setEngWordError] = useState("");
-    const [rusWordError, setRusWordError] = useState("");
-    const [transcriptionError, setTranscriptionError] = useState("");
-    const [tagError, setTagError] = useState("");
+    const [add, setAdd] = useState(false);
+    const [addWord, setAddWord] = useState([]);
+    const [styleEng, setStyleEng] = useState(styles.input);
+    const [styleTranscription, setStyleTranscription] = useState(styles.input);
+    const [styleRus, setStyleRus] = useState(styles.input);
+    const [styleTAg, setStyleTag] = useState(styles.input);
+    const [engWordError, setEngWordError] = useState(false);
+    const [rusWordError, setRusWordError] = useState(false);
+    const [transcriptionError, setTranscriptionError] = useState(false);
+    const [tagError, setTagError] = useState(false);
     const [formValid, setFormValid] = useState(false);
     const reEng = /[A-Za-z]/;
     const reRus = /[а-яА-ЯЁё]/;
     const reTag = /[a-zа-яё\s]/;
 
-   const handleEdit = (e) => {
+   const handleAdd = (e) => {
         e.preventDefault();
-        setEditing(true);
+        setAdd(true);
         };
-
-    const handleAdd= (e) => {
-        e.preventDefault()
-        setEditing(false);
-    };
             
-
     const handleCancel = (e) => {
             e.preventDefault();
-            setEditWord();
-            setEditing(false);
+            setAddWord();
+            setAdd(false);
             };
+
+    const handleSave = (e) => {
+    // Here you would typically send the edited data to your backend server
+    e.preventDefault()
+    setAdd(false);
+    };
+
+    useEffect(() => {
+        if(engWordError || rusWordError || transcriptionError || tagError) {
+         setFormValid(false)} 
+         else {
+        setFormValid(true)}
+        }, [engWordError, rusWordError, transcriptionError, tagError])
 
     if(!words) {
         return (
@@ -42,26 +53,27 @@ export default function Table({words}) {
                 <h2>Таблица слов</h2>
                 <form className={styles.table}>
                     <div className={styles.table__intro}>
-                    {editing ? (<input className={styles.input} type="text" placeholder="English"></input>) 
+                    {add ? (<input className={styleEng} type="text" placeholder="English"></input>) 
                     : 
                     (<div className={styles.name}>English</div>)} 
-                    {editing ? (<input className={styles.input} type="text" placeholder="Transcription"></input>
+                    {add ? (<input className={styleTranscription} type="text" placeholder="Transcription"></input>
                     ) : (
                     <div className={styles.name}>Транскрипция</div> 
                     )}
-                    {editing ? 
-                    (<input className={styles.input} type="text" placeholder="Russian"></input>) :
+                    {add ? 
+                    (<input className={styleRus} type="text" placeholder="Russian"></input>) :
                     (<div className={styles.name}>Перевод</div>)
                     }
-                    {editing ? (<input className={styles.input} type="text" placeholder="Тема"></input>) :
+                    {add ? (<input className={styleTAg} type="text" placeholder="Тема"></input>) :
                     (<div className={styles.name}>Тема</div>)
                     }
-                    {editing ? (
+                    {add ? (
                     <>
-                    <button onClick={handleEdit} className={styles.button}>сохранить</button>
+                    <button disabled={!formValid}
+                    onClick={handleAdd} className={styles.button}>сохранить</button>
                     <button onClick={handleCancel} className={styles.button}>отмена</button>
                     </>) : 
-                    (<button onClick={handleEdit} className={styles.button}>добавить слово</button>)}
+                    (<button onClick={handleAdd} className={styles.button}>добавить слово</button>)}
                     </div>
                     {words.map((word, id) => (
                     <CreateWordTable key={id} word={word}/>
