@@ -1,8 +1,8 @@
 .word {
-    display: flex;
-    gap: 0.2rem;
+  display: flex;
+  gap: 0.2rem;
 
-    &__div {
+  &__div {
     height: 3.5rem;
     border: 0.5px solid black;
     border-radius: 0.5rem;
@@ -11,66 +11,66 @@
     align-items: center;
     justify-content: center;
     width: 11.6875rem;
-    }
+  }
 }
 
 .tableicons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.4rem 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 0.5px solid rgb(92, 62, 121);
+  border-radius: 0.5rem;
+  background-color: rgba($color: white, $alpha: 0.4);
+  font-size: 1rem;
+  height: 3.5rem;
+  width: 15rem;
+
+  button {
+    background-color: rgb(150, 60, 240);
+    border: 1px solid rgb(150, 60, 240);
+    border-radius: 50%;
+    width: 2.8rem;
+    height: 2.8rem;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.4rem 2rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    border: 0.5px solid rgb(92, 62, 121);
-    border-radius: 0.5rem;
-    background-color: rgba($color: white, $alpha: 0.4);
-    font-size: 1rem;
-    height: 3.5rem;
-    width: 15rem;
+    transition: 0.5s;
+  }
 
-    button {
-        background-color: rgb(150, 60, 240);
-        border: 1px solid rgb(150, 60, 240);
-        border-radius: 50%;
-        width: 2.8rem;
-        height: 2.8rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition:0.5s;
-    }
+  img {
+    padding: 0.1rem;
+    height: 2rem;
+    align-items: center;
+  }
 
-    img {
-        padding: 0.1rem;
-        height: 2rem;
-        align-items: center;
-    }
-
-    button:hover {
-        background-color: rgb(192, 192, 192);
-        border: 1px solid rgb(192, 192, 192);
-    }
+  button:hover {
+    background-color: rgb(192, 192, 192);
+    border: 1px solid rgb(192, 192, 192);
+  }
 }
 
 .input {
-    padding: 0.5rem;
-    border: 0.5px solid rgb(92, 62, 121);
-    border-radius: 0.5rem;
-    height: 3.5rem;
+  padding: 0.5rem;
+  border: 0.5px solid rgb(92, 62, 121);
+  border-radius: 0.5rem;
+  height: 3.5rem;
 
-    .input::placeholder {
-        font-size: 1rem;
-        text-align: center;
-    }
+  .input::placeholder {
+    font-size: 1rem;
+    text-align: center;
+  }
 }
 
 button:disabled {
-    background: #ccc;
-  }
+  background: #ccc;
+}
 
 .inputRed {
-    padding: 0.5rem;
-    border: 0.3125rem solid red;
-    border-radius: 0.5rem;
-    height: 3.5rem;
+  padding: 0.5rem;
+  border: 0.3125rem solid red;
+  border-radius: 0.5rem;
+  height: 3.5rem;
 }

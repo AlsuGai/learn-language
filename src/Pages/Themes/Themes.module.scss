@@ -1,11 +1,10 @@
 .cards {
-    display: grid;
-    grid-template: 1fr 1fr/1fr 1fr 1fr;
-    gap: 3rem;
+  display: grid;
+  grid-template: 1fr 1fr/1fr 1fr 1fr;
+  gap: 3rem;
 
-    img {
-        height: 17rem;
-        width: auto;
-    }
+  img {
+    height: 17rem;
+    width: auto;
+  }
 }
-

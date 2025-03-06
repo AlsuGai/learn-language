@@ -1,65 +1,69 @@
 .table {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
 
-   &__intro {
+  &__intro {
     display: flex;
     gap: 0.2rem;
-   }
+  }
 }
 
 .input {
-    padding: 0.5rem;
-    border: 0.5px solid rgb(92, 62, 121);
-    border-radius: 0.5rem;
-    height: 3.5rem;
-    width: 11.6875rem;
+  padding: 0.5rem;
+  border: 0.5px solid rgb(92, 62, 121);
+  border-radius: 0.5rem;
+  height: 3.5rem;
+  width: 11.6875rem;
 
-    .input::placeholder {
-        font-size: 1rem;
-    }
+  .input::placeholder {
+    font-size: 1rem;
+  }
 }
 
 .name {
-    text-transform: uppercase;
-    font-weight: 700;
-    height: 3.5rem;
-    border: 0.5px solid black;
-    border-radius: 0.5rem;
-    background-color: white;
-    width: 11.6875rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  height: 3.5rem;
+  border: 0.5px solid black;
+  border-radius: 0.5rem;
+  background-color: white;
+  width: 11.6875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 td {
-    border: 0.5px solid black;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: rgba($color: white, $alpha: 0.4);
+  border: 0.5px solid black;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: rgba($color: white, $alpha: 0.4);
 }
 
 .button {
-    padding: 0.4rem 2rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    border: 0.5px solid rgb(92, 62, 121);
-    border-radius: 0.5rem;
-    color: white;
-    background-image: linear-gradient(to left, rgb(61, 6,158), rgb(224, 18,131));
-    font-size: 1rem;
-    height: 3.5rem;
-    width: 15rem;
+  padding: 0.4rem 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 0.5px solid rgb(92, 62, 121);
+  border-radius: 0.5rem;
+  color: white;
+  background-image: linear-gradient(
+    to left,
+    rgb(61, 6, 158),
+    rgb(224, 18, 131)
+  );
+  font-size: 1rem;
+  height: 3.5rem;
+  width: 15rem;
 }
 
 .button:hover {
-    background-color: rgb(92, 62, 121);
-    background-image: none;
-    opacity: 0.8;
+  background-color: rgb(92, 62, 121);
+  background-image: none;
+  opacity: 0.8;
 }
 
 button:disabled {
-    background: #ccc;
-  }
+  background: #ccc;
+}

@@ -1,26 +1,29 @@
-import { useState } from 'react'
-import Header from './Component/Header/Header';
-import Footer from './Component/Footer/Footer';
-import { Table, Cards, Themes, Error } from './Pages';
-import './style/App.scss'
-import { Route, Routes } from 'react-router-dom';
-import wordsJSON from './data/words.json'
+import { useState } from "react";
+import Header from "./Component/Header/Header";
+import Footer from "./Component/Footer/Footer";
+import { Table, Cards, Themes, Error } from "./Pages";
+import "./style/App.scss";
+import { Route, Routes } from "react-router-dom";
+import wordsJSON from "./data/words.json";
 
 function App() {
   const [words, setWords] = useState(wordsJSON);
   return (
     <>
       <header>
-      <Header />
+        <Header />
       </header>
-    <main className='main'>
-      <Routes>
-        <Route path='/learn-language/' element={<Table words = {words}/>} />
-        <Route path='/learn-language/cards' element={<Cards setWords = {setWords} words = {words} />}/>
-        <Route path='/learn-language/themes' element={<Themes />}/>
-        <Route path='/learn-language/*' element={<Error />} />
-      </Routes>
-    </main> 
+      <main className="main">
+        <Routes>
+          <Route path="/learn-language/" element={<Table words={words} />} />
+          <Route
+            path="/learn-language/cards"
+            element={<Cards setWords={setWords} words={words} />}
+          />
+          <Route path="/learn-language/themes" element={<Themes />} />
+          <Route path="/learn-language/*" element={<Error />} />
+        </Routes>
+      </main>
       <footer>
         <Footer />
       </footer>
@@ -28,4 +31,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
